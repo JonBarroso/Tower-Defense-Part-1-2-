@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverUI;
 
+    public GameObject completeLevelUi;
+
+    public string nextLevel = "Level02";
+    public int levelToUnlock = 2;
+
+
     void Start()
     {
         GameIsOver = false;
@@ -35,5 +41,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
 
         gameOverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        GameIsOver = true;
+        completeLevelUi.SetActive(true);
     }
 }
